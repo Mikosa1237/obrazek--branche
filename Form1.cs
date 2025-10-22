@@ -51,5 +51,40 @@ namespace obrazek___branche
                 origin.Dispose();
             }
         }
+
+        private void invert_Click(object sender, EventArgs e)
+        {
+            if (pictureBox.Image != null)
+            {
+                Bitmap origin = (Bitmap)pictureBox.Image;
+                Bitmap neg = new Bitmap(origin.Width, origin.Height);
+
+                for (int x = 0; x < origin.Width; x++)
+                {
+                    for (int y = 0; y < origin.Height; y++)
+                    {
+                        Color pixel = origin.GetPixel(x, y);
+                        neg.SetPixel(x, y, Color.FromArgb(pixel.A, 255 - pixel.R, 255 - pixel.G, 255 - pixel.B));
+                    }
+                }
+
+                pictureBox.Image = neg;
+                origin.Dispose();
+            }
+        }
+
+        private void ups_Click(object sender, EventArgs e)
+        {
+            if (pictureBox.Image != null)
+            {
+                Bitmap origin = (Bitmap)pictureBox.Image;
+                Bitmap ups = new Bitmap(origin);
+
+                ups.RotateFlip(RotateFlipType.RotateNoneFlipY);
+
+                pictureBox.Image = ups;
+                origin.Dispose();
+            }
+        }
     }
 }

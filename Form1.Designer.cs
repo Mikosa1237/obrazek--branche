@@ -34,6 +34,8 @@
             rb180 = new RadioButton();
             rb270 = new RadioButton();
             rotateButton = new Button();
+            invertButton = new Button();
+            upsButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -110,11 +112,37 @@
             rotateButton.UseVisualStyleBackColor = false;
             rotateButton.Click += rotate_Click;
             // 
+            // invertButton
+            // 
+            invertButton.BackColor = Color.Blue;
+            invertButton.ForeColor = Color.White;
+            invertButton.Location = new Point(37, 150);
+            invertButton.Name = "invertButton";
+            invertButton.Size = new Size(100, 30);
+            invertButton.TabIndex = 6;
+            invertButton.Text = "Invert Colors";
+            invertButton.UseVisualStyleBackColor = false;
+            invertButton.Click += invert_Click;
+            // 
+            // upsButton
+            // 
+            upsButton.BackColor = Color.Blue;
+            upsButton.ForeColor = Color.White;
+            upsButton.Location = new Point(37, 190);
+            upsButton.Name = "upsButton";
+            upsButton.Size = new Size(100, 30);
+            upsButton.TabIndex = 7;
+            upsButton.Text = "Upside Down";
+            upsButton.UseVisualStyleBackColor = false;
+            upsButton.Click += ups_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(upsButton);
+            Controls.Add(invertButton);
             Controls.Add(rotateButton);
             Controls.Add(rb270);
             Controls.Add(rb180);
@@ -136,5 +164,7 @@
         private System.Windows.Forms.RadioButton rb180;
         private System.Windows.Forms.RadioButton rb270;
         private System.Windows.Forms.Button rotateButton;
+        private System.Windows.Forms.Button invertButton;
+        private System.Windows.Forms.Button upsButton;
     }
 }
