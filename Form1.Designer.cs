@@ -30,6 +30,7 @@
         {
             pictureBox = new PictureBox();
             loadButton = new Button();
+            onlyGreenButton = new Button();
             rb90 = new RadioButton();
             rb180 = new RadioButton();
             rb270 = new RadioButton();
@@ -50,13 +51,24 @@
             pictureBox.TabStop = false;
             pictureBox.Click += pictureBox1_Click;
             // 
+            // onlyGreenButton
+            // 
+            onlyGreenButton.BackColor = Color.LightGreen;
+            onlyGreenButton.Location = new Point(37, 340);
+            onlyGreenButton.Name = "onlyGreenButton";
+            onlyGreenButton.Size = new Size(100, 30);
+            onlyGreenButton.TabIndex = 1;
+            onlyGreenButton.Text = "OnlyGreen";
+            onlyGreenButton.UseVisualStyleBackColor = false;
+            onlyGreenButton.Click += button_only_green_Click;
+            // 
             // loadButton
             // 
             loadButton.BackColor = Color.Gray;
             loadButton.Location = new Point(37, 381);
             loadButton.Name = "loadButton";
             loadButton.Size = new Size(100, 30);
-            loadButton.TabIndex = 1;
+            loadButton.TabIndex = 2;
             loadButton.Text = "Load";
             loadButton.UseVisualStyleBackColor = false;
             loadButton.Click += load_Click;
@@ -141,6 +153,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(onlyGreenButton);
             Controls.Add(upsButton);
             Controls.Add(invertButton);
             Controls.Add(rotateButton);
@@ -160,6 +173,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button loadButton;
+        private System.Windows.Forms.Button onlyGreenButton;
         private System.Windows.Forms.RadioButton rb90;
         private System.Windows.Forms.RadioButton rb180;
         private System.Windows.Forms.RadioButton rb270;
